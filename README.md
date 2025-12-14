@@ -1,2 +1,2 @@
 # LeetcodeGrind
-As repo name, time to lock in.
+As per repo name, time to lock in.
