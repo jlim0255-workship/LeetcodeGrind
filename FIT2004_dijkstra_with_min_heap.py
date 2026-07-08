@@ -22,14 +22,18 @@ class Graph:
 
         while pq:
             
+            # get the (weight, u) pair
             cur_dist, u = heapq.heappop(pq)
 
+            # go through the edges of this u (relaxation)
             for weight, v in self.adj[u]:
 
+                # in theory, cur_dist == dist[u]                
                 # if dist[v] > weight + cur_dist:
                 if dist[v] > weight + dist[u]:                    
 
-                    # we found a shorter distance, update
+                    # we found a shorter distance, update the dist array
+                    # push it to the heap
                     dist[v] = weight + dist[u]
                     heapq.heappush(pq, (dist[v], v))
 
